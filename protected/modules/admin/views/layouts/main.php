@@ -8,7 +8,13 @@
 	<body>
 
         <?php
-            $menuItems = array();
+            $menuItems = array( 
+                                array('label'=>'Задачи', 'url'=>'/admin/tasks'),
+                                array('label'=>'Проекты', 'url'=>'/admin/projects'), 
+                                array('label'=>'Сотрудники', 'url'=>'/admin/staff'),
+                                array('label'=>'Рабочий план', 'url'=>'/admin/workplan'), 
+                               
+                    );
         ?>
         <?php
             $userlogin = Yii::app()->user->name ? Yii::app()->user->name : Yii::app()->user->email;
