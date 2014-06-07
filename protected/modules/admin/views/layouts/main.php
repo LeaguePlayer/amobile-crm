@@ -8,13 +8,7 @@
 	<body>
 
         <?php
-            $menuItems = array(
-                array('label'=>'Разделы сайта', 'url'=>array('/admin/structure')),
-                array('label'=>'Меню сайта', 'url'=>array('/admin/menu')),
-                array('label'=>'Материалы', 'url'=>array('/admin/material')),
-                array('label'=>'Настройки', 'url'=>array('/admin/config')),
-                array('label'=>'Галереи', 'url'=>array('/admin/gallery/manage')),
-            );
+            $menuItems = array();
         ?>
         <?php
             $userlogin = Yii::app()->user->name ? Yii::app()->user->name : Yii::app()->user->email;

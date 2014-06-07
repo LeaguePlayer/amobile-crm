@@ -26,26 +26,4 @@ class AdminController extends Controller
             'sort' => 'SortAction',
         );
     }
-
-    /**
-     * Render SEO form for @param $model
-     * @return mixed|string
-     */
-    public function getSeoForm($model) {
-        $out = '';
-        if($model->metaData->hasRelation('seo')) {
-            if(isset($model->seo_id)){
-                $seo = Seo::model()->findByPk($model->seo_id);
-            }
-            if ( $seo === null ) {
-                $seo = new Seo;
-            }
-
-            $out = $this->renderPartial('/seo/_form', array(
-                'model' => $seo,
-                'title' => $model->getAttributeLabel('seo_id'
-            )), true);
-        }
-        return $out;
-    }
 }

@@ -27,39 +27,16 @@ class m140224_105014_config extends CDbMigration
 
         $this->insert('{{config}}', array(
             'param' => 'app.name',
-            'value' => 'Каркас приложения',
+            'value' => 'Amobile-Crm',
             'label' => 'Название сайта',
             'type' => 'string'
         ));
 
         $this->insert('{{config}}', array(
             'param' => 'app.description',
-            'value' => 'Это стартовый каркас',
+            'value' => '',
             'label' => 'Описание приложения',
             'type' => 'text'
-        ));
-
-        $this->insert('{{config}}', array(
-            'param' => 'temp.select',
-            'value' => '1',
-            'label' => 'Выпадающий список',
-            'type' => 'select',
-            'variants' => '1:Это тестовый пример | 2:Удали эту настройку из БД'
-        ));
-
-        $this->insert('{{config}}', array(
-            'param' => 'temp.radio',
-            'value' => '1',
-            'label' => 'Радиокнопки',
-            'type' => 'radio',
-            'variants' => '1:Это тестовый пример | 2:Удали эту настройку из БД'
-        ));
-
-        $this->insert('{{config}}', array(
-            'param' => 'temp.checkbox',
-            'value' => '1',
-            'label' => 'Пример чекбокса (правильно, его тоже удали)',
-            'type' => 'checkbox',
         ));
     }
  

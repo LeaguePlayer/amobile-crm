@@ -5,7 +5,7 @@
 return array_replace_recursive(
     array(
         'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-        'name'=>'Каркас приложения',
+        'name'=>'Amobile-Crm',
         'language' => 'ru',
         'theme'=>'default',
         // preloading 'log' component
@@ -21,11 +21,9 @@ return array_replace_recursive(
             'application.models.*',
             'application.components.*',
             'application.behaviors.*',
-			'appext.imagesgallery.models.*'
         ),
         'modules'=>array(
             'admin'=>array(),
-            'email'=>array(),
             'auth'=>array(),
             'user'=>array(
                 'hash' => 'md5',
@@ -44,14 +42,6 @@ return array_replace_recursive(
         'components'=>array(
             'config' => array(
                 'class' => 'DConfig'
-            ),
-            'db' => array(
-                'connectionString' => 'mysql:host=localhost;dbname=magic',
-                'emulatePrepare' => true,
-                'username' => 'root',
-                'password' => 'qwe123',
-                'charset' => 'utf8',
-                'tablePrefix' => 'tbl_',
             ),
             'authManager' => array(
                 'class' => 'CDbAuthManager',// 'auth.components.CachedDbAuthManager',
@@ -85,9 +75,9 @@ return array_replace_recursive(
                 'urlFormat'=>'path',
                 'rules'=>array(
                     'gii'=>'gii',
-                    'admin'=>'admin/structure',
                     'admin/<controller:!config>' => 'admin/<controller>/list',
-                    '/'=>'site/index',
+                    'admin'=>'admin/config',
+                    '/'=>'/admin/config',
                     '<controller:page>/<url:[\w_-]+>' => '<controller>/view',
                 ),
             ),
@@ -97,11 +87,6 @@ return array_replace_recursive(
 					'jquery.js'=>'http://code.jquery.com/jquery-1.11.0.js',
 					'jquery.min.js'=>'http://code.jquery.com/jquery-1.11.0.min.js',
 				),
-            ),
-            'date' => array(
-                'class'=>'application.components.Date',
-                //And integer that holds the offset of hours from GMT e.g. 4 for GMT +4
-                'offset' => 0,
             ),
             'errorHandler'=>array(
                 'errorAction'=>'site/error',

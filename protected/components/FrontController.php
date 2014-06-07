@@ -18,15 +18,4 @@ class FrontController extends Controller
     public function is_home(){
         return $this->route == 'site/index';
     }
-
-    public function beforeRender($view)
-    {
-		$this->buildMenu();
-        return parent::beforeRender($view);
-    }
-
-    public function buildMenu($currentNode = null)
-    {
-        $this->menu = Menu::model()->getMenuList();
-    }
 }
