@@ -4,7 +4,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Управление <?php echo $model->translition(); ?></h1>
+<h1>Управление Проектами</h1>
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'projects-grid',
@@ -20,6 +20,16 @@ $this->menu=array(
 		'name',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+            'buttons'=>array(
+            
+                'view' => array(
+                            
+						
+							'options'=>array('target'=>"_blank"),
+                            'url'=>'"http://{$data->link}"',
+                        ),
+            
+            ),
 		),
 	),
 )); ?>

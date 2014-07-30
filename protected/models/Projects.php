@@ -18,7 +18,7 @@ class Projects extends EActiveRecord
     public function rules()
     {
         return array(
-            array('name', 'length', 'max'=>255),
+            array('name, link', 'length', 'max'=>255),
             // The following rule is used by search().
             array('id, name', 'safe', 'on'=>'search'),
         );
@@ -37,6 +37,7 @@ class Projects extends EActiveRecord
         return array(
             'id' => 'ID',
             'name' => 'Название проекта',
+            'link'=>'Ссылка на сайт',
         );
     }
 

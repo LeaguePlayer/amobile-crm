@@ -4,7 +4,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Управление <?php echo $model->translition(); ?></h1>
+<h1>Управление сотрудниками</h1>
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'staff-grid',
@@ -22,6 +22,7 @@ $this->menu=array(
 		'cost_of_hour',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+            'template'=>"{update} {delete}",
 		),
 	),
 )); ?>

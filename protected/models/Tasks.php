@@ -55,7 +55,7 @@ class Tasks extends EActiveRecord
         return array(
             array('id_project, status, sort', 'numerical', 'integerOnly'=>true),
             array('cost', 'length', 'max'=>10),
-            array('comment, create_time, update_time', 'safe'),
+            array('comment, name, create_time, update_time', 'safe'),
             // The following rule is used by search().
             array('id, id_project, cost, comment, status, sort, create_time, update_time', 'safe', 'on'=>'search'),
         );
@@ -80,6 +80,7 @@ class Tasks extends EActiveRecord
             'sort' => 'Вес для сортировки',
             'create_time' => 'Дата создания',
             'update_time' => 'Дата последнего редактирования',
+            'name'=>'Название задачи',
         );
     }
 
@@ -100,6 +101,7 @@ class Tasks extends EActiveRecord
     {
         $criteria=new CDbCriteria;
 		$criteria->compare('id',$this->id);
+        $criteria->compare('name',$this->name);
 		$criteria->compare('id_project',$this->id_project);
 		$criteria->compare('cost',$this->cost,true);
 		$criteria->compare('comment',$this->comment,true);

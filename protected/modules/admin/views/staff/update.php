@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	"{$model->translition()}"=>array('list'),
+	"Сотрудники"=>array('list'),
 	'Редактирование',
 );
 
@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo $model->translition(); ?> - Редактирование</h1>
+<h1>Редактирование сотрудника</h1>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>

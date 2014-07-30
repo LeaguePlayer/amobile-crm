@@ -110,6 +110,13 @@ class SiteHelper {
 		$m = self::russianMonth($date[1]);
 		return $date[0] . '&nbsp;' . $m . '&nbsp;' . $date[2];
 	}
+    
+    public static function mpr($array)
+    {
+        echo "<pre>";
+        print_r ( $array );
+        echo "</pre>";
+    }
 
 	public static function sendMail($subject,$message,$to='',$from='')
     {
